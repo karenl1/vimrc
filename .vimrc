@@ -14,7 +14,24 @@ let java_highlight_functions=1
 let java_highlight_all=1
 let g:ycm_show_diagnostics_ui = 0
 
-" to find ctags file
+" Customize fzf colors to match colour scheme
+let g:fzf_colors =
+            \ { 'fg':      ['fg', 'Normal'],
+            \ 'bg':      ['bg', 'Normal'],
+            \ 'hl':      ['fg', 'Comment'],
+            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+            \ 'hl+':     ['fg', 'Statement'],
+            \ 'info':    ['fg', 'PreProc'],
+            \ 'border':  ['fg', 'Ignore'],
+            \ 'prompt':  ['fg', 'Conditional'],
+            \ 'pointer': ['fg', 'Exception'],
+            \ 'marker':  ['fg', 'Keyword'],
+            \ 'spinner': ['fg', 'Label'],
+            \ 'header':  ['fg', 'Comment'] }
+let g:fzf_layout = { 'down': '~20%' }
+
+" To find ctags file
 set autochdir
 set tags=tags;
 
@@ -30,6 +47,7 @@ highlight link javaDocTags PreProc
 nmap <F6> :NERDTreeToggle<CR>
 nmap <F5> :TagbarToggle<CR>
 nmap <esc><esc> :noh<return>
+noremap <C-p> :GFiles<CR>
 
 call plug#begin('~/.vim/plugged')
 
@@ -42,6 +60,8 @@ Plug 'craigemery/vim-autotag'
 Plug 'majutsushi/tagbar'
 Plug 'Chiel92/vim-autoformat'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --no-bash' }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
