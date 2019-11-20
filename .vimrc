@@ -61,10 +61,13 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 " Quit files with Leader + q
 noremap <leader>q :q<cr>
-" Save file with Leader + s (normal mode)
+" Save file with Leader + w (normal mode)
 nnoremap <leader>w :w<cr>
-" Save file with Leader + s (insert mode)
+" Save file with Leader + w (insert mode)
 inoremap <leader>w <C-c>:w<cr>
+" Save and quit file with Leader + wq (normal mode)
+nnoremap <leader>wq :wq<cr>
+
 
 call plug#begin('~/.vim/plugged')
 
