@@ -13,6 +13,9 @@ set ttymouse=xterm2
 let java_highlight_functions=1
 let java_highlight_all=1
 let g:ycm_show_diagnostics_ui = 0
+" Map <Leader> key
+let mapleader=","
+
 
 " Customize fzf colors to match colour scheme
 let g:fzf_colors =
@@ -38,16 +41,30 @@ set tags=tags;
 autocmd BufWrite * :Autoformat
 
 " If you are trying this at runtime, you need to reload the syntax file
-
 " Some more highlights, in addition to those suggested by cmcginty
 highlight link javaScopeDecl Statement
 highlight link javaType Type
 highlight link javaDocTags PreProc
 
+" Key remappings
 nmap <F6> :NERDTreeToggle<CR>
 nmap <F5> :TagbarToggle<CR>
 nmap <esc><esc> :noh<return>
 noremap <C-p> :GFiles<CR>
+" Shift + Direction to change tabs
+noremap <S-l> gt
+noremap <S-h> gT
+" Control + Direction to change panes
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+" Quit files with Leader + q
+noremap <leader>q :q<cr>
+" Save file with Leader + s (normal mode)
+nnoremap <leader>s :w<cr>
+" Save file with Leader + s (insert mode)
+inoremap <leader>s <C-c>:w<cr>
 
 call plug#begin('~/.vim/plugged')
 
