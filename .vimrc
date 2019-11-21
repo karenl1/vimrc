@@ -40,7 +40,7 @@ set tags=tags;
 
 " Autocommands
 :autocmd!
-autocmd FileType cpp BufWrite * :Autoformat
+autocmd BufWrite *.h,*.cc :Autoformat
 
 " If you are trying this at runtime, you need to reload the syntax file
 " Some more highlights, in addition to those suggested by cmcginty
