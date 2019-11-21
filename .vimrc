@@ -38,7 +38,9 @@ let g:fzf_layout = { 'down': '~20%' }
 set autochdir
 set tags=tags;
 
-autocmd BufWrite * :Autoformat
+" Autocommands
+:autocmd!
+autocmd FileType cpp BufWrite * :Autoformat
 
 " If you are trying this at runtime, you need to reload the syntax file
 " Some more highlights, in addition to those suggested by cmcginty
