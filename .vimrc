@@ -4,6 +4,7 @@ set shiftwidth=4
 set expandtab
 
 set number
+set ruler
 
 set ic
 set hlsearch
@@ -15,7 +16,6 @@ let java_highlight_all=1
 let g:ycm_show_diagnostics_ui = 0
 " Map <Leader> key
 let mapleader=","
-
 
 " Customize fzf colors to match colour scheme
 let g:fzf_colors =
@@ -40,7 +40,7 @@ set tags=tags;
 
 " Autocommands
 :autocmd!
-autocmd BufWrite *.h,*.cc :Autoformat
+autocmd BufWrite *.h,*.cc,*.tcc :Autoformat
 
 " If you are trying this at runtime, you need to reload the syntax file
 " Some more highlights, in addition to those suggested by cmcginty
