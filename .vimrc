@@ -33,6 +33,7 @@ let g:fzf_colors =
             \ 'spinner': ['fg', 'Label'],
             \ 'header':  ['fg', 'Comment'] }
 let g:fzf_layout = { 'down': '~20%' }
+let $FZF_DEFAULT_COMMAND = 'rg --hidden -g "!.git/*"'
 
 " To find ctags file
 set autochdir
